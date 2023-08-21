@@ -6,6 +6,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 app.get('/api/ping', (req, res) => {
+  console.log("pong")
   res.send("pong");
 });
 
