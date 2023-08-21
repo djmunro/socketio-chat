@@ -5,8 +5,12 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-app.get('/', (req, res) => {
+app.get('api', (req, res) => {
   res.sendFile(__dirname + '/app.html');
+});
+
+app.get('/api/ping', (req, res) => {
+  res.send("pong");
 });
 
 io.on('connection', (socket) => {
